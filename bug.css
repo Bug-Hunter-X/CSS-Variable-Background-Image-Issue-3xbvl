@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an issue where the `background-image` property doesn't work as expected when used with a CSS variable containing a URL. 
+```css
+:root {
+  --bg-image: url('https://example.com/image.jpg');
+}
+
+.element {
+  background-image: var(--bg-image);
+}
+```
+The `background-image` will not render correctly, while using the url directly works correctly.  This is because the `var()` function doesn't correctly handle the `url()` function within it. 
