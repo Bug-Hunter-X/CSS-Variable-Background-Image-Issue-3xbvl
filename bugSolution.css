@@ -1,0 +1,12 @@
+To solve this issue, avoid embedding the `url()` function within the CSS variable. Instead, store the image path in the variable and construct the `url()` within the `background-image` property.
+
+```css
+:root {
+  --bg-image-path: 'https://example.com/image.jpg';
+}
+
+.element {
+  background-image: url(var(--bg-image-path));
+}
+```
+This approach ensures the correct resolution of the CSS variable and the successful application of the background image.
